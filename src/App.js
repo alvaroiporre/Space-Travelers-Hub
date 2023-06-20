@@ -1,10 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import NavBar from './components/NavBar';
-import store from './redux/store';
 import Rockets from './components/Rockets';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
@@ -21,14 +18,5 @@ function App() {
     </div>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-);
 
 export default App;
