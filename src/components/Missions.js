@@ -29,15 +29,15 @@ const Missions = () => {
   }
 
   return (
-    <section className="rocket-container">
-      <ul className="rocket-list flex">
+    <section className="missions-container">
+      <ul className="table">
         {
         missions !== undefined
           ? missions.map((mission) => (
             <li key={mission.id} className="row-mission">
               <Mission mission={mission} />
             </li>
-          )) : <div>Loading...</div>
+          )) : <p>Loading...</p>
 }
       </ul>
     </section>
