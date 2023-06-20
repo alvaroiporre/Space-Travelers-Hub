@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions, selectMission } from '../redux/missions/missionsSlice';
+import Mission from './Mission';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -33,12 +34,8 @@ const Missions = () => {
         {
         missions !== undefined
           ? missions.map((mission) => (
-            <li key={mission.id}>
-              <div className="rocket-textBox flex">
-                <h3 className="rocket-name">{mission.name}</h3>
-                <p className="rocket-description">{mission.description}</p>
-                <button type="button" className="reserveBttn">Reserve Mission</button>
-              </div>
+            <li key={mission.id} className="row-mission">
+              <Mission mission={mission} />
             </li>
           )) : <div>Loading...</div>
 }

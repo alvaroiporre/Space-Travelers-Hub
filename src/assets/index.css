@@ -1,3 +1,7 @@
 .active {
   background-color: red;
 }
+
+.row-mission {
+  list-style: none;
+}
