@@ -26,10 +26,9 @@ const missionsSlice = createSlice({
       })
       .addCase(fetchMissions.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        console.log(action.payload);
         state.missions = action.payload.map((mission) => ({
           id: mission.mission_id,
-          name: mission.rocket_name,
+          name: mission.mission_name,
           description: mission.description,
         }));
       })
