@@ -1,6 +1,6 @@
-import {
-  BrowserRouter, Route, Routes,
-} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Rockets from './components/Rockets';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
           <Route path="/missions" element={<h1>Missions</h1>} />
         </Routes>
       </BrowserRouter>
+      <Rockets />
     </div>
   );
 }
