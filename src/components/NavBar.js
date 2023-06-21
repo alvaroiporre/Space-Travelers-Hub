@@ -12,7 +12,10 @@ function NavBar() {
       <ul className="nav-menu">
         <li><NavLink to="/" activeclassname="active">Rockets</NavLink></li>
         <li><NavLink to="/missions" activeclassname="active">Missions</NavLink></li>
-        <li><span className='line'/><NavLink exact to="/my-profile" activeclassname="active">My Profile</NavLink></li>
+        <li>
+          <span className="line" />
+          <NavLink exact to="/my-profile" activeclassname="active">My Profile</NavLink>
+        </li>
       </ul>
     </nav>
   );
