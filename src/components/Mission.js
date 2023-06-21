@@ -19,9 +19,9 @@ const Mission = ({ mission }) => {
       <p className="rocket-description">{mission.description}</p>
       <p>NOT A MEMBER</p>
       {
-        mission.reserved ? 
-        <button type="button" className="reserveBttn" onClick={handleJoin}>Leave Mission</button> 
-        :<button type="button" className="reserveBttn" onClick={handleLeave}>Join Mission</button>
+        mission.reserved
+          ? <button type="button" className="reserveBttn" onClick={handleLeave}>Leave Mission</button>
+          : <button type="button" className="reserveBttn" onClick={handleJoin}>Join Mission</button>
       }
     </>
   );
@@ -32,6 +32,7 @@ Mission.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 
