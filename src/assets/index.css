@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 25px;
   border-bottom: 1px solid black ;
 }
@@ -10,7 +11,7 @@
 }
 
 .active {
-  background-color: red;
+  font-weight: bold;
 }
 
 .nav-menu {
@@ -20,11 +21,22 @@
 
 .nav-menu li {
   list-style: none;
+  padding: 5px;
+}
+
+.line{
+  border-left: 2px solid black;
+  margin-right: 20px;
 }
 
 .row-mission {
   list-style: none;
   display: flex;
   gap: 10px;
+}
+
+.flex {
+  display: flex;
+  gap: 15px;
 }
 
