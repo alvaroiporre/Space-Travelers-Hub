@@ -29,7 +29,7 @@ const Rockets = () => {
 
   return (
     <section className="rocket-container">
-      <ul className="rocket-list flex">
+      <ul className="rocket-list">
         {rockets.map((rocket) => (
           <li key={rocket.id}>
             <img src={rocket.flickr_images[0]} className="rocket-img" alt={rocket.name} />
