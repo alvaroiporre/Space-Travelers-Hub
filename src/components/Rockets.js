@@ -19,10 +19,6 @@ const Rockets = () => {
     }
   }, [dispatch, rockets]);
 
-  if (status === 'loading') {
-    return <div>Loading...</div>;
-  }
-
   if (status === 'failed') {
     return <div>Failed to load rocket data</div>;
   }
