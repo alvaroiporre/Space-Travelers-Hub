@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRockets, selectRocket } from '../redux/rockets/rocketsSlice';
+import RocketList from './RocketList';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -8,9 +9,13 @@ const Rockets = () => {
   const status = useSelector((state) => state.rockets.status);
 
   useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchRockets());
-    }
+    const fetchData = async () => {
+      if (status === 'idle') {
+        await dispatch(fetchRockets());
+      }
+    };
+
+    fetchData();
   }, [dispatch, status]);
 
   useEffect(() => {
@@ -19,26 +24,32 @@ const Rockets = () => {
     }
   }, [dispatch, rockets]);
 
-  if (status === 'failed') {
-    return <div>Failed to load rocket data</div>;
+  let content;
+
+  if (status === 'loading') {
+    content = <div>Loading...</div>;
+  } else if (status === 'failed') {
+    content = <div>Failed to load rocket data</div>;
+  } else {
+    content = (
+      <section className="rockets-section">
+        <ul className="rockets-list">
+          {rockets.map((rocket) => (
+            <RocketList
+              key={rocket.id}
+              id={rocket.id}
+              img={rocket.img}
+              name={rocket.name}
+              description={rocket.description}
+              reserved={rocket.reserved}
+            />
+          ))}
+        </ul>
+      </section>
+    );
   }
 
-  return (
-    <section className="rocket-container">
-      <ul className="rocket-list">
-        {rockets.map((rocket) => (
-          <li key={rocket.id}>
-            <img src={rocket.flickr_images[0]} className="rocket-img" alt={rocket.name} />
-            <div className="rocket-textBox flex">
-              <h3 className="rocket-name">{rocket.name}</h3>
-              <p className="rocket-description">{rocket.description}</p>
-              <button type="button" className="reserveBttn">Reserve Rocket</button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
+  return content;
 };
 
 export default Rockets;

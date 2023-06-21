@@ -16,7 +16,7 @@ const Mission = ({ mission }) => {
   return (
     <>
       <h3 className="rocket-name">{mission.name}</h3>
-      <p className="rocket-description">{mission.description}</p>
+      <p className="">{mission.description}</p>
       <p>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</p>
       {
         mission.reserved
