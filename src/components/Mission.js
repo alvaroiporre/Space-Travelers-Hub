@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { joinMission } from '../redux/missions/missionsSlice';
+import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
 
 const Mission = ({ mission }) => {
   const dispatch = useDispatch();
   const handleJoin = () => {
     dispatch(joinMission(mission.id));
   };
+
+  const handleLeave = () => {
+    dispatch(leaveMission(mission.id));
+  };
+
   return (
     <>
       <h3 className="rocket-name">{mission.name}</h3>
