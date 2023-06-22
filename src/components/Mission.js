@@ -15,14 +15,16 @@ const Mission = ({ mission }) => {
 
   return (
     <>
-      <h3 className="rocket-name">{mission.name}</h3>
-      <p className="">{mission.description}</p>
-      <p>{mission.reserved ? 'Active Member' : 'NOT A MEMBER'}</p>
-      {
+      <td className="mission-name">{mission.name}</td>
+      <td className="mission-description">{mission.description}</td>
+      <td className="mission-status">{mission.reserved ? (<p className="active-member">Active Member</p>) : <p className="not-member">NOT A MEMBER</p>}</td>
+      <td className="mission-action">
+        {
         mission.reserved
-          ? <button type="button" className="reserveBttn" onClick={handleLeave}>Leave Mission</button>
-          : <button type="button" className="reserveBttn" onClick={handleJoin}>Join Mission</button>
+          ? <button type="button" className="leaveBtn" onClick={handleLeave}>Leave Mission</button>
+          : <button type="button" className="joinBtn" onClick={handleJoin}>Join Mission</button>
       }
+      </td>
     </>
   );
 };

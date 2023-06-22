@@ -30,16 +30,26 @@ const Missions = () => {
 
   return (
     <section className="missions-container">
-      <ul className="table">
-        {
+
+      {
         missions !== undefined
-          ? missions.map((mission) => (
-            <li key={mission.id} className="row-mission">
-              <Mission mission={mission} />
-            </li>
-          )) : <p>Loading...</p>
-}
-      </ul>
+          ? (
+            <table className="table">
+              <tr className="white-row">
+                <th>Mission</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+              {missions.map((mission, i) => (
+                <tr key={mission.id} className={i % 2 === 0 ? 'gray-row' : 'white-row'}>
+                  <Mission mission={mission} />
+                </tr>
+              ))}
+            </table>
+          ) : <p>Loading...</p>
+      }
+
     </section>
   );
 };

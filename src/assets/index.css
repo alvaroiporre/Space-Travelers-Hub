@@ -1,3 +1,7 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,6 +23,11 @@
   gap: 15px;
 }
 
+.nav-a,
+.nav-a::after {
+  color: #007bff;
+}
+
 .nav-menu li {
   list-style: none;
   padding: 5px;
@@ -29,10 +38,72 @@
   margin-right: 20px;
 }
 
-.row-mission {
-  list-style: none;
-  display: flex;
-  gap: 10px;
+.mission-name,
+.mission-status,
+.mission-action {
+  width: 16%;
+  text-align: center;
+}
+
+.mission-name {
+  font-weight: bold;
+}
+
+.mission-status {
+  font-size: small;
+}
+
+.mission-description {
+  padding: 10px;
+}
+
+th {
+  padding: 5px;
+}
+
+.joinBtn {
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: inherit;
+  padding: 5px;
+}
+
+.table {
+  margin: 20px;
+  background: rgb(226, 226, 226);
+  border-radius: 3px;
+}
+
+.leaveBtn {
+  border: 1px solid red;
+  border-radius: 4px;
+  color: red;
+  background-color: inherit;
+  padding: 5px;
+}
+
+.gray-row {
+  background-color: #f0f0f0;
+}
+
+.white-row {
+  background-color: white;
+}
+
+.not-member {
+  background-color: gray;
+  color: white;
+  padding: 2px;
+  border-radius: 2px;
+  display: inline;
+}
+
+.active-member {
+  background-color: #3bb3af;
+  color: white;
+  padding: 2px;
+  border-radius: 2px;
+  display: inline;
 }
 
 .flex {
@@ -127,4 +198,25 @@
   font-weight: bold;
   color: red;
   text-align: center;
+}
+
+.my-profile-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.my-profile-container article {
+  width: 45%;
+}
+
+.missions-reserved {
+  padding: 0;
+  width: 100%;
+  border: 1px solid gray;
+}
+
+.missions-reserved li {
+  padding: 10px;
+  list-style: none;
+  border-bottom: 1px solid gray;
 }
