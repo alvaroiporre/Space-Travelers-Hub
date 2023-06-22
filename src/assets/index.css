@@ -128,3 +128,19 @@
   color: red;
   text-align: center;
 }
+
+.my-profile-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.missions-reserved {
+  padding: 0;
+  width: 100%;
+}
+
+.missions-reserved li {
+  padding: 10px;
+  list-style: none;
+  border: 1px solid black;
+}
