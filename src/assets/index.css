@@ -14,10 +14,6 @@ body {
   width: 80px;
 }
 
-.active {
-  font-weight: bold;
-}
-
 .nav-menu {
   display: flex;
   gap: 15px;
@@ -26,6 +22,12 @@ body {
 .nav-a,
 .nav-a::after {
   color: #007bff;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .nav-menu li {
@@ -209,13 +211,15 @@ th {
   width: 45%;
 }
 
-.missions-reserved {
+.missions-reserved,
+.rockets-reserved {
   padding: 0;
   width: 100%;
   border: 1px solid gray;
 }
 
-.missions-reserved li {
+.missions-reserved li,
+.rockets-reserved li {
   padding: 10px;
   list-style: none;
   border-bottom: 1px solid gray;
