@@ -10,6 +10,8 @@ const MyProfile = () => {
       </article>
       <article>
         <h2>My Missions</h2>
+        {
+          missions &&
         <ul className="missions-reserved">
           {
             missions.map((mission) => (
@@ -17,6 +19,7 @@ const MyProfile = () => {
             ))
           }
         </ul>
+        }
       </article>
     </section>
   );
