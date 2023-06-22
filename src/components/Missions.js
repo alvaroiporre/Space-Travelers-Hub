@@ -35,7 +35,7 @@ const Missions = () => {
         missions !== undefined
           ? (
             <table className="table">
-              <tr className='white-row'>
+              <tr className="white-row">
                 <th>Mission</th>
                 <th>Description</th>
                 <th>Status</th>
