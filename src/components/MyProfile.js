@@ -13,7 +13,7 @@ const MyProfile = () => {
         <ul className='missions-reserved'>
           {
             missions.map((mission) => (
-              mission.reserved && <li key={mission.id}>{mission.name}</li>
+              mission.reserved && <li key={mission.id}><b>{mission.name}</b></li>
             ))
           }
         </ul>
