@@ -203,6 +203,10 @@ th {
   justify-content: space-evenly;
 }
 
+.my-profile-container article {
+  width: 45%;
+}
+
 .missions-reserved {
   padding: 0;
   width: 100%;
