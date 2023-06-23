@@ -20,10 +20,10 @@ const Mission = ({ mission }) => {
       <td className="mission-status">{mission.reserved ? (<p className="active-member">Active Member</p>) : <p className="not-member">NOT A MEMBER</p>}</td>
       <td className="mission-action">
         {
-        mission.reserved
-          ? <button type="button" className="leaveBtn" onClick={handleLeave}>Leave Mission</button>
-          : <button type="button" className="joinBtn" onClick={handleJoin}>Join Mission</button>
-      }
+          mission.reserved
+            ? <button type="button" className="leaveBtn" onClick={handleLeave}>Leave Mission</button>
+            : <button type="button" className="joinBtn" onClick={handleJoin}>Join Mission</button>
+        }
       </td>
     </>
   );
@@ -31,9 +31,9 @@ const Mission = ({ mission }) => {
 
 Mission.propTypes = {
   mission: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
     reserved: PropTypes.bool,
   }).isRequired,
 };
