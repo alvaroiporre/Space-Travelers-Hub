@@ -52,9 +52,9 @@ Welcome to my Space Travelers Hub project
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-**The live demo will be updated as soon as the page is displayed**
+[live Demo](https://alvaroiporre.github.io/Space-Travelers-Hub/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
