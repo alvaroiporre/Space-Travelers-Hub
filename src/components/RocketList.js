@@ -3,29 +3,27 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveRocket, cancelRocketReservation } from '../redux/rockets/rocketsSlice';
 
-const RocketList = ({
-  img, id, name, description, reserved,
-}) => {
+const RocketList = ({ rocket }) => {
   const dispatch = useDispatch();
 
   const handleCancelReservation = () => {
-    dispatch(cancelRocketReservation(id));
+    dispatch(cancelRocketReservation(rocket.id));
   };
 
   const handleReserveRocket = () => {
-    dispatch(reserveRocket(id));
+    dispatch(reserveRocket(rocket.id));
   };
 
   return (
     <li>
-      <img src={img} className="rocket-image" alt={name} />
+      <img src={rocket.img} className="rocket-image" alt={rocket.name} />
       <div className="rocket-details">
-        <h3 className="rocket-name">{name}</h3>
-        {reserved ? (
+        <h3 className="rocket-name">{rocket.name}</h3>
+        {rocket.reserved ? (
           <>
             <p className="rocket-description">
               <span className="reserved-label">Reserved</span>
-              {description}
+              {rocket.description}
             </p>
             <button
               type="button"
@@ -37,7 +35,7 @@ const RocketList = ({
           </>
         ) : (
           <>
-            <p className="rocket-description">{description}</p>
+            <p className="rocket-description">{rocket.description}</p>
             <button
               type="button"
               className="reserve-rocket-btn"
@@ -53,11 +51,13 @@ const RocketList = ({
 };
 
 RocketList.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
+  rocket: PropTypes.shape({
+    id: PropTypes.string,
+    img: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    reserved: PropTypes.bool,
+  }).isRequired,
 };
 
 export default RocketList;
